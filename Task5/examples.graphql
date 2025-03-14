@@ -1,0 +1,30 @@
+# Пример запроса для получения клиента и его документов
+query GetClientWithDocuments($clientId: ID!) {
+  client(id: $clientId) {
+    id
+    name
+    age
+    documents {
+      id
+      type
+      number
+      issueDate
+      expiryDate
+    }
+  }
+} 
+
+# Пример запроса для получения клиента и его родственников
+query GetClientWithRelatives($clientId: ID!) {
+  client(id: $clientId) {
+    id
+    name
+    age
+    relatives {
+      id
+      relationType
+      name
+      age
+    }
+  }
+}
